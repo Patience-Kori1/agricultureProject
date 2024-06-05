@@ -1,4 +1,23 @@
+{# templates/accueil.html.twig #}
 {% extends 'base.html.twig' %}
-{% block body %} 
-{{koko_name}}
-{% endblock %} 
+
+{% block title %}Accueil -- Agri {% endblock %}
+
+{% block body %}
+    <h4>accueil.html.twig</h4>
+    <p>Ceci est la page d'accueil.</p>
+    
+    {% if user %}
+        <p>Bienvenue, {{ user.0 }}!</p>
+    {% else %}
+        <p>Bienvenue, invité!</p>
+    {% endif %}
+
+    {# <ul>
+    {% for item in items %}
+        <li>{{ item.1 }}</li>
+    {% endfor %}
+    </ul> #}
+
+    {# {% include 'partials/footer.html.twig' %} #}
+{% endblock %}
