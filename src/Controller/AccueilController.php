@@ -5,14 +5,16 @@ namespace App\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 
 class AccueilController extends AbstractController 
 {
     /**
      * @Route("/", name="app_accueil")
      */
-    public function accueil(): Response
+    public function accueil(Request $request): Response
     {
+        dd($request);
         $user = ["Patience", "Kori"];
         $items = ["Hehe", "Ngaha"];
         return $this->render("accueil/accueil.html.twig", [
